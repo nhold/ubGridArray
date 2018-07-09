@@ -1,6 +1,8 @@
 ubGridArray
 =
-A single file that creates an easy to use single array as a 2d array.
+A single file that creates an easy to use single array as a 2d array. If you aren't using my [package manager](https://github.com/nhold/ubPackageManager), I recommend putting the `ubGridArray.cs` file under:
+
+`Assets/Plugins/Bifrost/ubGridArray/Scripts/`
 
 Usage
 -
@@ -8,14 +10,12 @@ Usage
 First just do the following to get access to the GridArray.
 
 ```
-#!c#
 using Bifrost.Core;
 ```
 
 The following example creates a colour based grid array for editing\creating an image. The same can apply for inventory positions or tile map positions.
 
 ```
-#!c#
 var colorGridArray = new GridArray<Color>(20, 20);
 
 colorGridArray[0, 0] = Color.black;
@@ -28,17 +28,14 @@ colorGridArray.FloodFill(0, 1, Color.blue, colorGridArray.GetValueAt(0, 1));
 You can make a GridArray viewable in the inspector like this:
 
 ```
-#!c#
-
 public class ColorGridArray : GridArray<Color>
 {
 }
 ```
 
-Then use it like this in your MonoBehaviour:
+Then you can use it like this in your MonoBehaviour:
 
 ```
-#!c#
 [SerializeField]
 private ColorGridArray colorGridArray; 
 ```
